@@ -10,12 +10,12 @@ RUN apt-get update -qq && \
 
 EXPOSE 80
 
-CMD ["nodejs", "/home/web/index.js"]
+CMD ["nodejs", "/home/src/index.js"]
 
 # Move files into place
-COPY web/ /home/web/
+COPY src/ /home/src/
 
 # Install dependencies
-WORKDIR /home/web
+WORKDIR /home/src
 
 RUN npm install
